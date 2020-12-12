@@ -1,0 +1,25 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Deny storage accounts not only using https",
+  "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/main-management-group/providers/Microsoft.Authorization/policyDefinitions/703da6ab-84b4-486b-862b-8d939c29e3ea",
+  "scope": "/providers/Microsoft.Management/managementGroups/main-management-group",
+  "notScopes": [],
+  "parameters": {},
+  "metadata": {
+   "assignedBy": "Ryan Palmer",
+   "parameterScopes": {},
+   "createdBy": "5f4503d2-a885-4d00-ad6f-b45c42c275fd",
+   "createdOn": "2020-12-12T17:48:56.7955514Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/main-management-group/providers/Microsoft.Authorization/policyAssignments/56bfa0218dfd43848b41726e",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "56bfa0218dfd43848b41726e"
+}

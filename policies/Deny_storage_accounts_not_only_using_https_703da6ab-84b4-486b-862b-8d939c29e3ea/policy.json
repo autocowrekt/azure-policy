@@ -1,0 +1,49 @@
+{
+ "properties": {
+  "displayName": "Deny storage accounts not only using https",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Deny creation of new storage accounts not only using secure https",
+  "metadata": {
+   "category": "Storage",
+   "createdBy": "5f4503d2-a885-4d00-ad6f-b45c42c275fd",
+   "createdOn": "2020-12-12T17:48:36.1210935Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "effectType": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Effect",
+     "description": "Enable or disable the execution of the policy"
+    },
+    "allowedValues": [
+     "Deny",
+     "Disabled"
+    ],
+    "defaultValue": "Deny"
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Storage/storageAccounts"
+     },
+     {
+      "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+      "notEquals": "true"
+     }
+    ]
+   },
+   "then": {
+    "effect": "[parameters('effectType')]"
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/main-management-group/providers/Microsoft.Authorization/policyDefinitions/703da6ab-84b4-486b-862b-8d939c29e3ea",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "703da6ab-84b4-486b-862b-8d939c29e3ea"
+}
